@@ -24,7 +24,7 @@ public class Demo01 {
 	  //a.contextClick().build().perform();
 	  driver.findElement(By.linkText("Log in")).click();
 	  WebElement email = driver.findElement(By.id("Email"));
-	  //send the text in CAPS
+	  //send the text in CAPSss
 	  a.moveToElement(email).keyDown(email, Keys.SHIFT).sendKeys("lalit").build().perform();
 	  
 			  	  
