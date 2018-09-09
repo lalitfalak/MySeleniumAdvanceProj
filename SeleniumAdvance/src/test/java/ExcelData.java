@@ -2,9 +2,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 
 import java.io.FileInputStream;
-
 import java.io.IOException;
-
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -13,11 +11,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 
-public class dataExcel {
- WebDriver driver;	
-	
+public class ExcelData {
+WebDriver driver;
   @Test
-  public void dataExcel1() throws InterruptedException, IOException  {
+  public void dataExcel() throws InterruptedException, IOException {
+	  
 	  driver.get("http://demowebshop.tricentis.com//");
 	  driver.manage().window().maximize();
 	  FileInputStream fin = new FileInputStream("C:\\Lalit_Selenium_Advace\\SeleniumAdvance\\Logindetails.xlsx");
@@ -39,7 +37,6 @@ public class dataExcel {
 			
 		}
 	  }
-	 
   }
   @BeforeTest
   public void beforeTest() {
@@ -47,12 +44,11 @@ public class dataExcel {
 	  System.setProperty("webdriver.chrome.driver","C:\\Users\\pdc2b-training.pdc2b\\Desktop\\drivers\\chromedriver.exe");
 	  driver = new ChromeDriver();
   }
-  
 
   @AfterTest
   public void afterTest() {
   }
-
+  
   public void logintest(String username, String password) throws InterruptedException
   {
 	  driver.findElement(By.className("ico-login")).click();
@@ -61,5 +57,5 @@ public class dataExcel {
 	  driver.findElement(By.id("Password")).sendKeys("mypass");
 	  driver.findElement(By.className("button-1 login-button")).click();
   }
-  
+
 }
